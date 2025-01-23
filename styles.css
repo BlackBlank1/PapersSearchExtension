@@ -1,0 +1,254 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: 600px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 15px;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    margin-bottom: 15px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-container select,
+.search-container input {
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+}
+
+#platformSelect {
+    width: 100px;
+}
+
+#yearSelect {
+    width: 100px;
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 150px;
+}
+
+#searchButton {
+    width: 80px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#searchButton.loading span,
+#searchButton.loading .layui-icon-search {
+    display: none;
+}
+
+#searchButton.loading .layui-icon-loading {
+    display: inline-block !important;
+}
+
+.results-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 5px 10px 10px;
+}
+
+/* 优化论文卡片样式 */
+.paper-item {
+    margin-bottom: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.paper-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.paper-item .layui-card-header {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafafa;
+    border-radius: 8px 8px 0 0;
+    flex: 1;
+}
+
+.paper-item h3 {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 44px;
+}
+
+.paper-item .authors {
+    color: #666;
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 19px;
+}
+
+.paper-item .year {
+    color: #888;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    min-height: 19px;
+}
+
+.paper-item .layui-card-body {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid #f0f0f0;
+    background: #fff;
+    height: 44px;
+    align-items: center;
+}
+
+/* 按钮样式优化 */
+.paper-item .layui-btn {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    margin: 0;
+}
+
+.paper-item .layui-btn i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.paper-item .layui-btn-normal {
+    background-color: #1E9FFF;
+}
+
+.paper-item .show-abstract {
+    background-color: #009688;
+}
+
+.error, .no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#loading {
+    margin: 10px 0;
+}
+
+/* 自定义滚动条样式 */
+.results-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+h1 {
+    color: #333;
+}
+
+#elementContainer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    
+}
+
+.video-checkbox {
+    /* margin-left: 10px; */
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    /* margin-top: 10px; */
+}
+
+.card {
+    width:40%;
+    height:60%;
+    border: 3px solid rgb(150, 147, 147);
+    margin-right: 5px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.one-card {
+    width:80%;
+    height:95%;
+    border: 3px solid rgb(150, 147, 147);
+    margin-right: 5px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 旋转动画 */
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.layui-anim-rotate {
+    animation: rotate360 1s linear infinite;
+}
+

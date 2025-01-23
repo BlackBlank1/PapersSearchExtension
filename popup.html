@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>论文检索</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="layui/css/modules/layer/default/layer.css">
+  <script src="resources/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="font-size: 18px;margin: 10px 0;">论文检索</h1>
+    <div class="search-container">
+      <div class="search-row">
+        <select id="platformSelect" class="layui-select">
+          <option value="aaai">AAAI</option>
+          <option value="tkde">TKDE</option>
+          <option value="ieee">IEEE</option>
+          <option value="springer">Springer</option>
+        </select>
+        <select id="yearSelect" class="layui-select">
+          <option value="">所有年份</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
+        <input type="text" id="searchInput" class="layui-input" placeholder="输入关键词">
+        <button id="searchButton" class="layui-btn layui-btn-normal">
+          <i class="layui-icon layui-icon-search"></i>
+          <span>搜索</span>
+          <i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop" style="display: none;"></i>
+        </button>
+      </div>
+    </div>
+    <div id="results" class="results-container">
+      <!-- 结果将在这里动态显示 -->
+    </div>
+    <div id="loading" style="display: none;" class="layui-progress">
+      <div class="layui-progress-bar layui-bg-blue" lay-percent="100%"></div>
+    </div>
+  </div>
+  <script src="layui/layui.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
