@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       $.ajax({
-        url: 'http://127.0.0.1:5000/aaai_papers',
+        url: 'http://127.0.0.1:5000/papers',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
