@@ -112,8 +112,17 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('处理论文数据:', {
         title: paper.title,
         authors: paper.authors,
-        published: paper.published
+        published: paper.published,
+        download_link: paper.download_link
       });
+
+      const downloadButton = paper.download_link
+      ? `<a class="layui-btn layui-btn-xs layui-btn-normal download-link" href="${paper.download_link}" download>
+          <i class="layui-icon layui-icon-download-circle"></i>下载PDF
+        </a>`
+      : `<button class="layui-btn layui-btn-xs layui-btn-disabled" disabled>
+          <i class="layui-icon layui-icon-download-circle"></i>下载PDF
+        </button>`;
       
       html += `
         <div class="paper-item layui-card">
@@ -133,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="layui-btn layui-btn-xs show-abstract">
               <i class="layui-icon layui-icon-read"></i>查看摘要
             </button>
+            ${downloadButton}
           </div>
         </div>
       `;
