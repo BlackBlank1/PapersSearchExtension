@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
         title: paper.title,
         authors: paper.authors,
         published: paper.published,
-        download_link: paper.download_link
+        download_link: paper.download_link,
+        raw_abstract: paper.raw_abstract
       });
 
       const downloadButton = paper.download_link
@@ -171,6 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
           content: `
             <div style="padding: 20px;">
               <h3 style="margin-bottom: 10px;font-size: 16px;">${paper.title}</h3>
+              <p style="line-height: 1.6;font-size: 14px;">${paper.raw_abstract || '暂无摘要'}</p>
+              <br>
               <p style="line-height: 1.6;font-size: 14px;">${paper.abstract || '暂无摘要'}</p>
             </div>
           `
